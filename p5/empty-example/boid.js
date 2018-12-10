@@ -56,30 +56,30 @@ class Boid{
     return avg;
   }
 
-  separation(boids){
-    let perception = 50;
-    let avg = createVector();
+//   separation(boids){
+//     let perception = 50;
+//     let avg = createVector();
 
-    let i = 0;
-    for (let others of boids){
-      let dist = sqrt(sq(this.position.x-others.position.x)+sq(this.position.y-others.position.y))
-      if (others != this && dist <= perception) {
-          let diff = p5.Vector.sub(this.positon, others.position);
-          diff.div(dist);
-          others.flockID = this.flockID;
-          avg.add(diff)
-          i++;
-          this.flockSize = i;
-      }
-    }
-    if (i>0){
-      avg.div(i);
-      avg.setMag(this.maxSpeed);
-      avg = avg.sub(this.velocity);
-      avg.limit(this.maxForce);
-    }
-    return avg;
-  }
+//     let i = 0;
+//     for (let others of boids){
+//       let dist = sqrt(sq(this.position.x-others.position.x)+sq(this.position.y-others.position.y))
+//       if (others != this && dist <= perception) {
+//           let diff = p5.Vector.sub(this.positon, others.position);
+//           diff.div(dist);
+//           others.flockID = this.flockID;
+//           avg.add(diff)
+//           i++;
+//           this.flockSize = i;
+//       }
+//     }
+//     if (i>0){
+//       avg.div(i);
+//       avg.setMag(this.maxSpeed);
+//       avg = avg.sub(this.velocity);
+//       avg.limit(this.maxForce);
+//     }
+//     return avg;
+//   }
 
 
   cohesion(boids){
