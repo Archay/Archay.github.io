@@ -110,10 +110,10 @@ class Boid{
     this.acceleration.set(0,0);
     let alignment = this.align(boids);
     let cohesion = this.cohesion(boids);
-    let separation = this.separation(boids);
-    // this.acceleration.add(alignment);
-    // this.acceleration.add(cohesion);
-    this.acceleration.add(separation);
+    //let separation = this.separation(boids);
+    this.acceleration.add(alignment);
+    this.acceleration.add(cohesion);
+    //this.acceleration.add(separation);
   }
   update(){
     this.velocity.limit(this.maxSpeed);
